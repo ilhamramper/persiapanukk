@@ -85,7 +85,7 @@
                                 <tbody>
                                     <td colspan="6">
                                         <p>
-                                            No data available in table<br>
+                                            Semua transaksi sudah selesai<br>
                                             <a href="{{ route('riwayat.transaksi') }}" class="btn btn-primary mt-2">Riwayat
                                                 Transaksi</a>
                                         </p>

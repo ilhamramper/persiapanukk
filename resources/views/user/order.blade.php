@@ -63,7 +63,7 @@
                                 <tbody>
                                     <td colspan="5">
                                         <p>
-                                            No data available in table<br>
+                                            Semua order sudah selesai<br>
                                             <a href="{{ route('riwayat.order') }}" class="btn btn-primary mt-2">Riwayat
                                                 Order</a>
                                         </p>
