@@ -40,7 +40,7 @@
                                             ) }}
                                             </td>
                                             <td>
-                                                {{ $order->sorder->status_order }}
+                                                {{ $order->sorder->status_order }}<br>
 
                                                 @php
                                                     $selesaiCount = $order->detailorder->where('status_detail_order', 6)->count();
