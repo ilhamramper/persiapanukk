@@ -21,7 +21,7 @@
                                         <th class="text-center">Nama Pelanggan</th>
                                         <th class="text-center">Total Bayar</th>
                                         <th class="text-center">Status</th>
-                                        <th class="text-center">Aksi</th>
+                                        <th class="text-center aksi-column">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -48,11 +48,10 @@
                                                 @endphp
 
                                                 <strong>
-                                                    <p>{{ $selesaiCount }} Order Selesai, {{ $batalCount }} Order
-                                                        Dibatalkan</p>
+                                                    {{ $selesaiCount }} Order Selesai, {{ $batalCount }} Order Dibatalkan
                                                 </strong>
                                             </td>
-                                            <td>
+                                            <td class="aksi-column">
                                                 <a href="{{ route('detail.transaksi', ['id' => $order->id]) }}"
                                                     class="btn btn-success">Lihat Detail Order</a>
                                             </td>
@@ -69,13 +68,15 @@
                                         <th class="text-center">Nama Pelanggan</th>
                                         <th class="text-center">Total Bayar</th>
                                         <th class="text-center">Status</th>
-                                        <th class="text-center">Aksi</th>
+                                        <th class="text-center aksi-column">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                        <tr>
-                                            <td colspan="6"><p>No data available in table</p></td>
-                                        </tr>
+                                    <tr>
+                                        <td colspan="6">
+                                            <p>No data available in table</p>
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         @endif
@@ -89,7 +90,36 @@
 @section('scripts')
     <script>
         $(document).ready(function() {
-            $('#riwayattransaksi').DataTable();
+            var table = $('#riwayattransaksi').DataTable({
+                buttons: [{
+                        extend: 'copy',
+                        exportOptions: {
+                            columns: ':visible:not(.aksi-column)'
+                        },
+                        title: 'BelajarUKK',
+                        filename: 'BelajarUKK',
+                    },
+                    {
+                        extend: 'excel',
+                        exportOptions: {
+                            columns: ':visible:not(.aksi-column)'
+                        },
+                        title: 'BelajarUKK',
+                        filename: 'BelajarUKK',
+                    },
+                    {
+                        extend: 'pdf',
+                        exportOptions: {
+                            columns: ':visible:not(.aksi-column)'
+                        },
+                        title: 'BelajarUKK',
+                        filename: 'BelajarUKK',
+                    }
+                ]
+            });
+
+            table.buttons().container()
+                .appendTo('#riwayattransaksi_wrapper .col-md-6:eq(0)');
         });
     </script>
 @endsection
