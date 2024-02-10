@@ -98,6 +98,7 @@
                         },
                         title: 'BelajarUKK',
                         filename: 'BelajarUKK',
+                        className: 'btn-datatable',
                     },
                     {
                         extend: 'excel',
@@ -106,6 +107,7 @@
                         },
                         title: 'BelajarUKK',
                         filename: 'BelajarUKK',
+                        className: 'btn-datatable',
                     },
                     {
                         extend: 'pdf',
@@ -114,6 +116,7 @@
                         },
                         title: 'BelajarUKK',
                         filename: 'BelajarUKK',
+                        className: 'btn-datatable',
                     }
                 ]
             });

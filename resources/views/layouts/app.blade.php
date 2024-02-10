@@ -37,6 +37,18 @@
         .dataTables_wrapper .dt-buttons {
             margin-top: 10px;
         }
+
+        .btn-datatable {
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-datatable:hover {
+            color: #fff;
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
     </style>
 </head>
 
